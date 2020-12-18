@@ -1,0 +1,24 @@
+language: node_js
+cache:
+    directories:
+      - node_modules
+      - ~/.npm
+node_js:
+    -  '12 '
+git:
+    depth: 3
+script:
+    - yarn test
+notifications:
+    email:
+        recipients: amb.test19@gmail.com
+        on_success: always
+        on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  apu_key: 7541682d-4a87-437a-893b-7f83b76cd1b3
+  app: platzi-store-am
+  on:
+      repo: amb19/platzi-store-backend
